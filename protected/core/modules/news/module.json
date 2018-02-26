@@ -1,0 +1,7 @@
+{
+    "id": "news",
+    "name": "News",
+    "description": "The news management module.",
+    "keywords": ["news", "yii2", "maibin"],
+    "version": "1.0.0"
+}

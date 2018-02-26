@@ -1,0 +1,17 @@
+{
+  "name": "basic-test",
+  "version": "1.0.0",
+  "description": "Yii2 basic Gulp",
+  "keywords": [
+    "tools"
+  ],
+  "author": "xiaomalover",
+  "license": "ISC",
+  "dependencies": {
+    "gulp": "*",
+	"gulp-uglify": "*",
+	"minimist": "*",
+	"gulp-rename": "*",
+	"gulp-css": "*"
+  }
+}

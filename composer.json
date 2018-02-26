@@ -1,0 +1,73 @@
+{
+    "name": "yiisoft/yii2-app-basic",
+    "description": "Yii 2 Basic Project Template",
+    "keywords": ["yii2", "framework", "basic", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-jui": "^2.0.0",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "leandrogehlen/yii2-treegrid": "*",
+        "weison-tech/yii2-layer": "*",
+        "weison-tech/ueditor": "~1.2.0",
+        "weison-tech/yii2-adminlte-asset": "2.*",
+        "yii2mod/yii2-editable": "*",
+        "bower-asset/fontawesome": "^4.3.0",
+        "bower-asset/blueimp-file-upload": "^9.7.0",
+        "bower-asset/jquery-placeholder": "^2.3.0",
+        "kop/yii2-scroll-pager": "dev-master",
+        "2amigos/yii2-date-time-picker-widget" : "~1.0",
+        "2amigos/yii2-arrayquery-component": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1",
+        "codeception/specify": "~0.4.3"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "vendor-dir": "protected/vendor",
+        "fxp-asset":{
+            "installer-paths": {
+                "npm-asset-library": "protected/vendor/npm",
+                "bower-asset-library": "protected/vendor/bower"
+            }
+        }
+    },
+    "scripts": {
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "protected/runtime": "0777",
+                    "assets": "0777",
+                    "protected/yii": "0755",
+                    "protected/modules": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "protected/core/config/web.php"
+            ]
+        }
+    }
+}

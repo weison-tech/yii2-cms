@@ -1,0 +1,9 @@
+{
+    "id": "admin",
+    "name": "Admin",
+    "description": "Admin Module",
+    "keywords": [
+        "core"
+    ],
+    "version": "1.0"
+}

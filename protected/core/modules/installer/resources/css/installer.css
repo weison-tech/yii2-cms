@@ -1,0 +1,109 @@
+body {
+  padding-top: 100px;
+  background-color: #ededed;
+  color: #777;
+  font-family: 'Open Sans', sans-serif;
+}
+body a,
+body a:hover,
+body a:focus,
+body a:active,
+body a.active {
+  color: #555;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+h4 {
+  font-weight: 300;
+  font-size: 150%;
+}
+.heading {
+  font-size: 16px;
+  font-weight: 300;
+  color: #555;
+  background-color: white;
+  border: none;
+  padding: 10px;
+}
+.text-center {
+  text-align: center !important;
+}
+.panel {
+  border: none;
+  background-color: #fff;
+  box-shadow: 0 0 3px #dadada;
+  -webkit-box-shadow: 0 0 3px #dadada;
+  -moz-box-shadow: 0 0 3px #dadada;
+  border-radius: 4px;
+  position: relative;
+}
+.panel h1 {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 0;
+  color: #555;
+}
+.panel .panel-heading {
+  font-size: 16px;
+  font-weight: 300;
+  color: #555;
+  background-color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+}
+.panel .panel-heading .heading-link {
+  color: #6fdbe8 !important;
+  font-size: 0.8em;
+}
+.panel .panel-body {
+  padding: 10px;
+  font-size: 13px;
+}
+.panel .panel-body p {
+  color: #555;
+}
+.installer .logo {
+  text-align: center;
+}
+.installer h2 {
+  font-weight: 100;
+}
+.installer .panel {
+  margin-top: 50px;
+}
+.installer .panel h3 {
+  margin-top: 0;
+}
+.installer .powered,
+.installer .powered a {
+  color: #bac2c7 !important;
+  margin-top: 10px;
+  font-size: 12px;
+}
+.installer .fa {
+  width: 18px;
+}
+.installer .check-ok {
+  color: #97d271;
+}
+.installer .check-warning {
+  color: #fdd198;
+}
+.installer .check-error {
+  color: #ff8989;
+}
+.installer .prerequisites-list ul {
+  list-style: none;
+  padding-left: 15px;
+}
+.installer .prerequisites-list ul li {
+  padding-bottom: 5px;
+}
+/*# sourceMappingURL=installer.css.map */

@@ -1,0 +1,9 @@
+{
+    "id": "user",
+    "name": "User",
+    "description": "User Module",
+    "keywords": [
+        "core"
+    ],
+    "version": "1.0"
+}

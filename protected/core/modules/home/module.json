@@ -1,0 +1,7 @@
+{
+    "id": "home",
+    "name": "Home",
+    "description": "The home management module.",
+    "keywords": ["home", "yii2", "maibin"],
+    "version": "1.0.0"
+}
