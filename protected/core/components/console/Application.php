@@ -66,8 +66,11 @@ class Application extends \yii\console\Application
      */
     public function isDatabaseInstalled()
     {
-        if (in_array('setting', Yii::$app->db->schema->getTableNames())) {
-            return true;
+        try {
+            if (in_array('setting', Yii::$app->db->schema->getTableNames())) {
+                return true;
+            }
+        } catch (\Exception $e) {
         }
 
         return false;

@@ -62,6 +62,7 @@ class CompanyController extends Controller
                 'success',
                 Yii::t('HomeModule.controllers_CompanyController', 'Update successfully.')
             );
+            return $this->redirect(['index']);
         }
 
         return $this->render('index', ['model' => $model]);

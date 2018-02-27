@@ -7,17 +7,17 @@
         <div class="row about_headline">
             <div class="col-sm-6 col-sm-offset-3 col-xs-12 wow fadeInUp text-center" data-wow-duration="1200ms"
                  data-wow-delay="300ms">
-                <h2><?= $company->en_name ?></h2>
+                <h2><?= $company ? $company->en_name : '' ?></h2>
                 <p>
-                    <?= $company->description ?>
+                    <?= $company ? $company->description : '' ?>
                 </p>
             </div>
         </div>
         <div class="row about_img">
             <div class="col-sm-12  col-xs-12 wow fadeInUp text-center" data-wow-duration="1200ms"
                  data-wow-delay="300ms">
-                <div class="pc_show"><img src="<?= $company->thu ? $company->thu->getOriginImageUrl() : '/themes/default/images/about_01.png' ?>" alt=""/></div>
-                <div class="pc_hide"><img src="<?= $company->mThu ? $company->mThu->getOriginImageUrl() : '/themes/default/images/about_02.png' ?>" alt=""/></div>
+                <div class="pc_show"><img src="<?= ($company && $company->thu) ? $company->thu->getOriginImageUrl() : '/themes/default/images/about_01.png' ?>" alt=""/></div>
+                <div class="pc_hide"><img src="<?= ($company && $company->mThu) ? $company->mThu->getOriginImageUrl() : '/themes/default/images/about_02.png' ?>" alt=""/></div>
             </div>
         </div>
         <div class="row disposition">

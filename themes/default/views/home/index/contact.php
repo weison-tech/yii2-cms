@@ -8,11 +8,11 @@ $this->pageTitle = '联系';
 <section class="container">
     <div class="row wow fadeInUp log_img" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="col-sm-3 col-xs-12 text-center conten_log">
-            <img src="<?= $company->img ? $company->img->getOriginImageUrl() : '/themes/default/images/logo.png' ?>" alt=""/>
+            <img src="<?= ($company && $company->img) ? $company->img->getOriginImageUrl() : '/themes/default/images/logo.png' ?>" alt=""/>
         </div>
         <div class="col-sm-3 col-xs-12 contact-li">
-            <h3><?= $company->name ?></h3>
-            <h4><?= $company->en_name ?></h4>
+            <h3><?= $company ? $company->name : '' ?></h3>
+            <h4><?= $company ? $company->en_name : '' ?></h4>
             <ul class="list-unstyled" id="ico">
                 <?php if ($links) { foreach ($links as $link) { ?>
                     <li>
@@ -25,9 +25,9 @@ $this->pageTitle = '联系';
             </ul>
         </div>
         <div class="col-sm-3 col-sm-offset-3 contact-add">
-            <div class="site"><?= $company->address ?></div>
-            <p class="touch">电话： <?= $company->mobile ?></p>
-            <p class="touch">邮箱： <?= $company->email ?></p>
+            <div class="site"><?= $company ? $company->address : '' ?></div>
+            <p class="touch">电话： <?= $company ? $company->mobile : '' ?></p>
+            <p class="touch">邮箱： <?= $company ? $company->email : '' ?></p>
         </div>
     </div>
     <div class="row wow fadeInUp contact_mid" data-wow-duration="1000ms" data-wow-delay="400ms">
@@ -68,7 +68,7 @@ $this->pageTitle = '联系';
             <?= $form->field($model, 'demand')->textarea(['rows' => 6, 'placeholder' => "您的需求描述？"]) ?>
             <div class="refer">
                 <button>发送需求</button>
-                <p>或者发送商务质询到邮箱：<?=$company->email ?></p>
+                <p>或者发送商务质询到邮箱：<?= $company ? $company->email : '' ?></p>
             </div>
         </div>
         <?php ActiveForm::end(); ?>
@@ -86,14 +86,14 @@ $this->pageTitle = '联系';
     var height = is_pc ? "473px" : "115px";
     window.document.getElementById("l-map").style.height = height;
 
-    var subsection_lng = '<?= $company->longitude ?>';
-    var subsection_lat = '<?= $company->latitude ?>';
+    var subsection_lng = '<?= $company ? $company->longitude : 0 ?>';
+    var subsection_lat = '<?= $company ? $company->latitude : 0 ?>';
     if (subsection_lng.length > 0 && subsection_lat.length > 0) { //坐标定位
         var point = new BMap.Point(subsection_lng, subsection_lat);
         map.centerAndZoom(point, 18);
         map.addOverlay(new BMap.Marker(point));    //添加标注
     } else {
-        map.centerAndZoom("<?= $company -> name?>", 18);
+        map.centerAndZoom("<?= $company ? $company -> name : '' ?>", 18);
     }
 
     map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用

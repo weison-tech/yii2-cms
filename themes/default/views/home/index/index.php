@@ -9,7 +9,7 @@ $this->pageTitle = '首页';
             <div class="heading text-center col-sm-8 col-sm-offset-2 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">
                 <h1>彰显气质与提升价值</h1>
                 <h2>经典案例</h2>
-                <p>为用户和客户打造"超迈绝伦"的设计，致力于用设计提升产品和企业价值</p>
+                <p>致力于用设计提升产品和企业价值</p>
             </div>
         </div>
     </div>
