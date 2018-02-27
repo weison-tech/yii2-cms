@@ -19,7 +19,7 @@
         "yiisoft/yii2-jui": "^2.0.0",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
-        "leandrogehlen/yii2-treegrid": "*",
+        "weison-tech/yii2-treegrid": "~1.0.2",
         "weison-tech/yii2-layer": "*",
         "weison-tech/ueditor": "~1.2.0",
         "weison-tech/yii2-adminlte-asset": "2.*",
