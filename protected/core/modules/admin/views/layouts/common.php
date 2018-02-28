@@ -4,16 +4,14 @@
  */
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
+use core\modules\admin\widgets\CompanyLogo;
 ?>
 
 <?php $this->beginContent('@core/modules/admin/views/layouts/base.php'); ?>
     <div class="wrapper">
         <!-- header logo: style can be found in header.less -->
         <header class="main-header">
-            <a href="" class="logo">
-                <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                <?php echo Yii::$app->name ?>
-            </a>
+            <?= CompanyLogo::widget() ?>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
                 <!-- Sidebar toggle button-->
@@ -26,6 +24,12 @@ use yii\widgets\Breadcrumbs;
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
+                        <li>
+                            <?php echo Html::a(
+                            '<i class="fa fa-bookmark-o"></i> ' . Yii::t('AdminModule.views_layouts_common', 'Frontend Site'),
+                                '/'
+                            ) ?>
+                        </li>
 
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">

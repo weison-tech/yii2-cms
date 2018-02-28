@@ -19,4 +19,5 @@
 return array(
     'Toggle navigation' => '切换导航',
     'Logout' => '退 出',
+    'Frontend Site' => '前端网站',
 );

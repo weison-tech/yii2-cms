@@ -88,6 +88,19 @@ class Banner extends \yii\db\ActiveRecord
     }
 
     /**
+     * Set default value
+     * @param bool $insert
+     * @return bool
+     */
+    public function beforeSave($insert)
+    {
+        if ($this->sort_order == null) {
+            $this->sort_order = 0;
+        }
+        return parent::beforeSave($insert);
+    }
+
+    /**
      * @inheritdoc
      */
     public function attributeLabels()
