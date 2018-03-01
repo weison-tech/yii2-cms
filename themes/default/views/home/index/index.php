@@ -31,7 +31,7 @@ $this->pageTitle = '首页';
                                     <p><?= $product->title ?></p>
                                 </div>
                                 <div class="folio-overview">
-                                    <span class="folio-link"><a class="folio-read-more" href="<?= Url::to(['products/detail', 'id' => $product->id]) ?>" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
+                                    <span class="folio-link"><a class="folio-read-more" href="/product_detail/<?= $product->id ?>.html" data-single_url="portfolio-single.html" ><i class="fa fa-link"></i></a></span>
 
                                 </div>
                             </div>
@@ -154,7 +154,7 @@ $this->pageTitle = '首页';
                     <?php foreach ($news as $ns) { ?>
                         <div class="col-sm-4 wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="400ms">
                             <div class="post-thumb">
-                                <a href="<?= Url::to(['news/detail', 'id' => $ns->id]) ?>"><img class="img-responsive" src="<?= $ns->img ? $ns->img->getOriginImageUrl() : ''?>" alt=""></a>
+                                <a href="/news_detail/<?= $ns->id ?>.html"><img class="img-responsive" src="<?= $ns->img ? $ns->img->getOriginImageUrl() : ''?>" alt=""></a>
                             </div>
                             <div class="entry-header">
                                 <h3><a href="<?= Url::to(['news/detail', 'id' => $ns->id]) ?>"><?= $ns->title ?></a></h3>

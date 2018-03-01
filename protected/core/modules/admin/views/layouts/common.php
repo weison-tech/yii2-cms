@@ -27,7 +27,8 @@ use core\modules\admin\widgets\CompanyLogo;
                         <li>
                             <?php echo Html::a(
                             '<i class="fa fa-bookmark-o"></i> ' . Yii::t('AdminModule.views_layouts_common', 'Frontend Site'),
-                                '/'
+                                '/',
+                                ['target' => '_blank',]
                             ) ?>
                         </li>
 

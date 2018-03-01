@@ -30,7 +30,6 @@ class HomeAsset extends AssetBundle
         'js/bootstrap.min.js',
         'js/jquery.inview.min.js',
         'js/wow.min.js',
-        'js/smoothscroll.js',
         'js/jquery.countTo.js',
         'js/lightbox.min.js',
         'js/main.js',
