@@ -1,6 +1,6 @@
 Yii2 CMS
 ===================================
-This is a cms based on yii2 basic template, you can use it to build you own enterprise.
+This is a cms based on yii2 basic template, you can use it to build you own enterprise web site.
 
 
 
