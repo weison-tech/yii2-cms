@@ -85,20 +85,36 @@ Features
 
 运行效果
 ---------
+安装向导
+
 ![安装](docs/install.png)
 
 ![安装2](docs/install2.png)
 
+前端首页展示
+
 ![前台首页](docs/home.png)
+
+前端联系我们页面展示
 
 ![前台联系我们页](docs/contact.png)
 
+后端用layerui做确认框,adminlte为主题，分类树可折叠
+
 ![后台分类](docs/category.png)
+
+记录排序行内可编辑
 
 ![后台编辑](docs/editable.png)
 
-![后台轮播](docs/banner.png)
+支持多图上传，拖拽排序
+
+![后台编辑图片](docs/sort.png)
+
+主题颜色切换
 
 ![后台主题](docs/theme.png)
+
+语言切换
 
 ![后台多语言](docs/l18n.png)
