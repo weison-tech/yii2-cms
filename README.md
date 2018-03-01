@@ -124,7 +124,7 @@ Contact
 --------
 Wechat qrcode
 
-![language](docs/contact.png)
+![language](docs/contact.jpg)
 
 Donate
 --------
@@ -132,5 +132,5 @@ If you want help author to buy pizzas.
 
 Wechat Reward Code
 
-![language](docs/reward.png)
+![language](docs/reward.jpg)
 
