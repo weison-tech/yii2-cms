@@ -13,7 +13,7 @@ HomeAsset::register($this);
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
     <?= Html::csrfMetaTags() ?>
     <title><?= $this->pageTitle ? Html::encode($this->pageTitle) : '' ?></title>
     <link id="css-preset" href="/themes/default/css/presets/preset1.css" rel="stylesheet">

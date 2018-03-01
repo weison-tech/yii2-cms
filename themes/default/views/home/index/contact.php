@@ -76,9 +76,7 @@ $this->pageTitle = '联系';
 </section>
 
 
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=GA0ZcT9NV96rSaeKEDl0Scjtet9A4gTj"></script>
-
-
+<script type="text/javascript" src="http://api.map.baidu.com/getscript?v=2.0&ak=GA0ZcT9NV96rSaeKEDl0Scjtet9A4gTj"></script>
 <script type="text/javascript">
     //初始化地图,设置城市和地图级别。
     var map = new BMap.Map("l-map");

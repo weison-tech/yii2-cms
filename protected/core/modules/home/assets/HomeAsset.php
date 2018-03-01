@@ -26,7 +26,6 @@ class HomeAsset extends AssetBundle
         'css/responsive.css',
     ];
     public $js = [
-        'js/jquery.js',
         'js/bootstrap.min.js',
         'js/jquery.inview.min.js',
         'js/wow.min.js',
@@ -34,5 +33,9 @@ class HomeAsset extends AssetBundle
         'js/lightbox.min.js',
         'js/main.js',
         'js/swich_ico.js',
+    ];
+
+    public $depends = [
+        'yii\web\JqueryAsset',
     ];
 }

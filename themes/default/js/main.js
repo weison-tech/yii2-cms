@@ -2,7 +2,7 @@ jQuery(function ($) {
 
     //Pre-loader
     var preloader = $('.preloader');
-    $(window).load(function () {
+    $(window).on('load', function () {
         preloader.remove();
     });
 
