@@ -118,3 +118,19 @@ Change theme
 Change language
 
 ![language](docs/l18n.png)
+
+
+Contact
+--------
+Wechat qrcode
+
+![language](docs/contact.png)
+
+Donate
+--------
+If you want help author to buy pizzas.
+
+Wechat Reward Code
+
+![language](docs/reward.png)
+
