@@ -83,38 +83,38 @@ Features
     ...
 
 
-运行效果
+Preview
 ---------
-安装向导
+Install
 
-![安装](docs/install.png)
+![install](docs/install.png)
 
-![安装2](docs/install2.png)
+![install2](docs/install2.png)
 
-前端首页展示
+Frontend home page
 
-![前台首页](docs/home.png)
+![home](docs/home.png)
 
-前端联系我们页面展示
+Contact page
 
-![前台联系我们页](docs/contact.png)
+![contact](docs/contact.png)
 
-后端用layerui做确认框,adminlte为主题，分类树可折叠
+Use adminlte as theme, use layerui to define alert, category tree can fold.
 
-![后台分类](docs/category.png)
+![category](docs/category.png)
 
-记录排序行内可编辑
+Inline editable
 
-![后台编辑](docs/editable.png)
+![editable](docs/editable.png)
 
-支持多图上传，拖拽排序
+Multiple image upload，Drag and drop sort
 
-![后台编辑图片](docs/sort.png)
+![sort](docs/sort.png)
 
-主题颜色切换
+Change theme
 
-![后台主题](docs/theme.png)
+![change theme](docs/theme.png)
 
-语言切换
+Change language
 
-![后台多语言](docs/l18n.png)
+![language](docs/l18n.png)
