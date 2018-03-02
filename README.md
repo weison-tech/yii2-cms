@@ -36,13 +36,13 @@ uploads/                 contains all upload files.
 
 Installation
 --------
-1, Clone the code from github.
+1, Update composer asset plugin.
 ```
-$ clone git@github.com:weison-tech/yii2-cms.git
+$ composer global require "fxp/composer-asset-plugin:*"
 ```
-2, Cd in root folder, install all dependencies by composer.
+2, Install yii2 cms code.
 ```
-$ composer install
+$ composer create-project --prefer-dist weison-tech/yii2-cms cms
 ```
 3, Create database
 
