@@ -34,6 +34,8 @@ tools/
 uploads/                 contains all upload files.
 ```
 
+[中文文档](https://github.com/weison-tech/yii2-cms/blob/master/docs/README-zh.md)
+
 Installation
 --------
 1, Update composer asset plugin.
