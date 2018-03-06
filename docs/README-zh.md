@@ -88,44 +88,44 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 ---------
 安装
 
-![install](docs/install.png)
+![install](install.png)
 
-![install2](docs/install2.png)
+![install2](install2.png)
 
 前端首页
 
-![home](docs/home.png)
+![home](home.png)
 
 联系我们页面
 
-![contact](docs/contact.png)
+![contact](contact.png)
 
 后端用adminlte作为主题, 用layerui覆盖默认弹窗, 分类树可动态收缩展开
 
-![category](docs/category.png)
+![category](category.png)
 
 可以在列表页做排序编辑
 
-![editable](docs/editable.png)
+![editable](editable.png)
 
 多图上传，拖拽排序
 
-![sort](docs/sort.png)
+![sort](sort.png)
 
 修改后端主题
 
-![change theme](docs/theme.png)
+![change theme](theme.png)
 
 改变语言
 
-![language](docs/l18n.png)
+![language](l18n.png)
 
 
 有任何，安装使用问题，请添加微信
 --------
 微信二维码
 
-![language](docs/contact.jpg)
+![language](contact.jpg)
 
 捐赠
 --------
@@ -133,5 +133,5 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 
 赞赏码
 
-![language](docs/reward.jpg)
+![language](reward.jpg)
 

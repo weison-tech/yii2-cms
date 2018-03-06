@@ -87,44 +87,44 @@ Preview
 ---------
 Install
 
-![install](docs/install.png)
+![install](install.png)
 
-![install2](docs/install2.png)
+![install2](install2.png)
 
 Frontend home page
 
-![home](docs/home.png)
+![home](home.png)
 
 Contact page
 
-![contact](docs/contact.png)
+![contact](contact.png)
 
 Use adminlte as theme, use layerui to define alert, category tree can fold.
 
-![category](docs/category.png)
+![category](category.png)
 
 Inline editable
 
-![editable](docs/editable.png)
+![editable](editable.png)
 
 Multiple image upload，Drag and drop sort
 
-![sort](docs/sort.png)
+![sort](sort.png)
 
 Change theme
 
-![change theme](docs/theme.png)
+![change theme](theme.png)
 
 Change language
 
-![language](docs/l18n.png)
+![language](l18n.png)
 
 
 Contact
 --------
 Wechat qrcode
 
-![language](docs/contact.jpg)
+![language](contact.jpg)
 
 Donate
 --------
@@ -132,5 +132,5 @@ If you want help author to buy pizzas.
 
 Wechat Reward Code
 
-![language](docs/reward.jpg)
+![language](reward.jpg)
 
