@@ -55,12 +55,12 @@ class IndexController extends Controller
     public function actionLogin()
     {
         $this->layout = 'main-login';
-        if (!Yii::$app->admin->isGuest) {
+        if (!Yii::$app->user->isGuest) {
             return $this->redirect(['index']);
         }
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            $returnUrl = Yii::$app->admin->returnUrl;
+            $returnUrl = Yii::$app->user->returnUrl;
             if ($returnUrl == '/index.php') {
                 $returnUrl = Url::to(['index']);
             }
@@ -77,7 +77,7 @@ class IndexController extends Controller
      */
     public function actionLogout()
     {
-        Yii::$app->admin->logout();
+        Yii::$app->user->logout();
         return $this->redirect(['login']);
     }
 

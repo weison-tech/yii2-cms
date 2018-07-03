@@ -18,6 +18,7 @@ $config = [
             'enableAutoLogin' => true,
             'authTimeout' => 1400,
             'loginUrl' => ['/user/index/login'],
+            'identityCookie' => ['name' => '__user_identity', 'httpOnly' => true],
             'idParam' => '__user',
         ],
         'admin' => [
@@ -26,6 +27,7 @@ $config = [
             'enableAutoLogin' => true,
             'authTimeout' => 1400,
             'loginUrl' => ['/admin/index/login'],
+            'identityCookie' => ['name' => '__admin_identity', 'httpOnly' => true],
             'idParam' => '__admin',
         ],
         'errorHandler' => [
