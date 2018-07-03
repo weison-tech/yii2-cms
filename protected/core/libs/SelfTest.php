@@ -68,7 +68,7 @@ class SelfTest
         }
 
         // Checks INTL Extension
-        $title = 'PHP - INTL Extension';
+        /*$title = 'PHP - INTL Extension';
 
         if (function_exists('collator_create')) {
             $checks[] = array(
@@ -116,7 +116,7 @@ class SelfTest
                 'state' => 'WARNING',
                 'hint' => 'ICU Data ' . $icuMinDataVersion . ' or higher is required'
             );
-        }
+        }*/
 
         // Checks EXIF Extension
         $title = 'PHP - EXIF Extension';

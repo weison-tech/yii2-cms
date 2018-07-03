@@ -35,7 +35,9 @@ use core\modules\admin\widgets\CompanyLogo;
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header light-blue">
-                                    <img src="/static/img/default_user.jpg" class="img-circle" alt="User Image"/>
+                                    <img src="<?= Yii::$app->admin->identity->avatarImg ?
+                                        Yii::$app->admin->identity->avatarImg->getPreviewImageUrl(100, 100) :
+                                        '/static/img/default_user.jpg' ?>" class="img-circle" alt="User Image"/>
                                     <p>
                                         <?php echo Yii::$app->admin->identity->username ?>
                                     </p>
