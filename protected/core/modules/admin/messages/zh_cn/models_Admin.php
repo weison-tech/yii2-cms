@@ -20,4 +20,7 @@ return array(
     'Username' => '用户名',
     'Password' => '密 码',
     'Email' => '邮箱',
+    'Avatar' => '头像',
+    'Old Password' => '旧密码',
+    'Repeat Password' => '重复密码',
 );

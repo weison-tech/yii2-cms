@@ -2,6 +2,8 @@
 
 namespace core\modules\admin\models;
 
+use core\modules\file\behaviors\UploadBehavior;
+use core\modules\file\models\File;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\web\IdentityInterface;
@@ -20,11 +22,23 @@ use yii\web\IdentityInterface;
  */
 class Admin extends \yii\db\ActiveRecord implements IdentityInterface
 {
+    public $repassword;
+
+    public $old_password;
+
+    public $avatar;
+
     const STATUS_NOT_ACTIVE = 1;
 
     const STATUS_ACTIVE = 2;
 
     const STATUS_DELETED = 3;
+
+    public static $stat = [
+        self::STATUS_NOT_ACTIVE  => '未激活',
+        self::STATUS_ACTIVE => '已激活',
+        self::STATUS_DELETED => '已删除',
+    ];
 
     public $password;
 
@@ -32,6 +46,24 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             TimestampBehavior::class,
+            [
+                'class' => UploadBehavior::class,
+                'attribute' => 'avatar',
+                'multiple' => false,
+            ],
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function scenarios()
+    {
+        return [
+            'default' => ['username', 'email'],
+            'create' => ['username', 'email', 'password', 'avatar', 'status'],
+            'update' => ['username', 'email', 'password', 'avatar', 'status'],
+            'self-update' => ['username', 'email', 'password', 'avatar', 'old_password', 'repassword'],
         ];
     }
 
@@ -55,6 +87,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
+            [['avatar'], 'safe'],
         ];
     }
 
@@ -67,7 +100,29 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
             'username' => Yii::t('AdminModule.models_Admin', 'Username'),
             'password_hash' => Yii::t('AdminModule.models_Admin', 'Password'),
             'email' => Yii::t('AdminModule.models_Admin', 'Email'),
+            'avatar' => Yii::t('AdminModule.models_Admin', 'Avatar'),
+            'old_password' => Yii::t('AdminModule.models_Admin', 'Old Password'),
+            'repassword' => Yii::t('AdminModule.models_Admin', 'Repeat Password'),
+            'status' => Yii::t('base', 'Status'),
+            'created_at' => Yii::t('base', 'Created At'),
+            'updated_at' => Yii::t('base', 'Updated At'),
+            'password' => Yii::t('AdminModule.models_Admin', 'Password'),
         ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            $this->setPassword($this->password);
+        } else {
+            if (isset($this->password) && $this->password != '') {
+                $this->setPassword($this->password);
+            }
+        }
+        return parent::beforeSave($insert);
     }
 
     /**
@@ -140,5 +195,11 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     public function validatePassword($password)
     {
         return Yii::$app->getSecurity()->validatePassword($password, $this->password_hash);
+    }
+
+    public function getAvatarImg()
+    {
+        return $this->hasOne(File::class, ['object_id' => 'id'])
+            ->onCondition(['object_model' => self::class, 'object_field' => 'avatar']);
     }
 }

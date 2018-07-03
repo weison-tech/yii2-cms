@@ -42,4 +42,6 @@ return [
     'File Setting' => '附件设置',
     'Enabled' => '显 示',
     'Disabled' => '隐 藏',
+    'Back To List' => '返回列表',
+    'Update successfully' => '修改成功',
 ];

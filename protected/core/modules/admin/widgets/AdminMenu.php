@@ -18,6 +18,7 @@ class AdminMenu extends \core\widgets\BaseMenu
                 'url' => '#',
                 'sortOrder' => 11,
                 'items' => [
+                    ['label' => Yii::t('AdminModule.widgets_AdminMenu', 'Admins'), 'icon' => 'list', 'url' => ['/admin/admin'],],
                     [
                         'label' => Yii::t('AdminModule.widgets_AdminMenu', 'Permission Management'),
                         'icon' => 'group',

@@ -99,6 +99,7 @@ class LoginForm extends Model
         if ($this->user === false) {
             $this->user = Admin::find()
                 ->andWhere(['or', ['username' => $this->username], ['email' => $this->username]])
+                ->andWhere(['status' => Admin::STATUS_ACTIVE])
                 ->one();
         }
         return $this->user;
