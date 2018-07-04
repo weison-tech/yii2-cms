@@ -115,7 +115,7 @@ class File extends ActiveRecord
         if (!Yii::$app instanceof ConsoleApp) {
             $behaviors[] = [
                 'class' => BlameableBehavior::class,
-                'value' => Yii::$app->admin->id,
+                'value' => Yii::$app->admin->getId() ?: Yii::$app->user->getId(),
             ];
         }
         return $behaviors;
