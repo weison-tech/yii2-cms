@@ -2,6 +2,7 @@
 
 use core\migrations\Migration;
 use core\modules\user\models\User;
+use core\modules\admin\models\Admin;
 
 class m131023_165755_initial extends Migration
 {
@@ -29,7 +30,7 @@ class m131023_165755_initial extends Migration
             'password_hash' => $this->string()->notNull(),
             'password_reset_token' => $this->string()->unique(),
             'email' => $this->string()->notNull()->unique(),
-            'status' => $this->smallInteger()->notNull()->defaultValue(10),
+            'status' => $this->smallInteger()->notNull()->defaultValue(Admin::STATUS_ACTIVE),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
         ], $this->tableOptions);
