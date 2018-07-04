@@ -24,6 +24,14 @@ use core\modules\admin\widgets\CompanyLogo;
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
+                        <li>
+                            <?php echo Html::a(
+                                '<i class="fa fa-bookmark-o"></i> ' . Yii::t('AdminModule.views_layouts_common', 'Frontend Site'),
+                                '/',
+                                ['target' => '_blank',]
+                            ) ?>
+                        </li>
+
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
