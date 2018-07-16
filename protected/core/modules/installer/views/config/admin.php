@@ -20,7 +20,7 @@ use yii\helpers\Html;
 
         <?= $form->field($model, 'username')->textInput() ?>
 
-        <?= $form->field($model, 'password_hash')->passwordInput() ?>
+        <?= $form->field($model, 'password')->passwordInput() ?>
 
         <?php echo Html::submitButton(Yii::t('InstallerModule.base', 'Next') . ' <i class="fa fa-arrow-circle-right"></i>', array('class' => 'btn btn-primary', 'data-ui-loader' => '')); ?>
 

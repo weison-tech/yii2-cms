@@ -105,11 +105,8 @@ class ConfigController extends Controller
 
         //Create admin user.
         $model = new Admin();
-        if ($model->load(Yii::$app->request->post())) {
-            $model->setPassword($model['password_hash']);
-            if ($model->save()) {
-                return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
-            }
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(Yii::$app->getModule('installer')->getNextConfigStepUrl());
         }
 
         return $this->render('admin', array('model' => $model));

@@ -60,7 +60,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     public function scenarios()
     {
         return [
-            'default' => ['username', 'email'],
+            'default' => ['username', 'email', 'password'],
             'create' => ['username', 'email', 'password', 'avatar', 'status'],
             'update' => ['username', 'email', 'password', 'avatar', 'status'],
             'self-update' => ['username', 'email', 'password', 'avatar', 'old_password', 'repassword'],
@@ -81,9 +81,9 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'password_hash', 'email'], 'required'],
+            [['username', 'password', 'email'], 'required'],
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'password_hash', 'password_reset_token', 'email'], 'string', 'max' => 255],
+            [['username', 'password', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['username'], 'unique'],
             [['email'], 'unique'],
             [['password_reset_token'], 'unique'],
@@ -98,7 +98,7 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             'username' => Yii::t('AdminModule.models_Admin', 'Username'),
-            'password_hash' => Yii::t('AdminModule.models_Admin', 'Password'),
+            'password' => Yii::t('AdminModule.models_Admin', 'Password'),
             'email' => Yii::t('AdminModule.models_Admin', 'Email'),
             'avatar' => Yii::t('AdminModule.models_Admin', 'Avatar'),
             'old_password' => Yii::t('AdminModule.models_Admin', 'Old Password'),
@@ -106,7 +106,6 @@ class Admin extends \yii\db\ActiveRecord implements IdentityInterface
             'status' => Yii::t('base', 'Status'),
             'created_at' => Yii::t('base', 'Created At'),
             'updated_at' => Yii::t('base', 'Updated At'),
-            'password' => Yii::t('AdminModule.models_Admin', 'Password'),
         ];
     }
 
