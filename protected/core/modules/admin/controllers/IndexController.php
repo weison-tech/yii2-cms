@@ -1,6 +1,10 @@
 <?php
 namespace core\modules\admin\controllers;
 
+use core\modules\admin\models\Admin;
+use core\modules\home\models\Contact;
+use core\modules\news\models\News;
+use core\modules\products\models\Products;
 use Yii;
 use core\modules\admin\components\Controller;
 use core\modules\admin\forms\LoginForm;
@@ -49,7 +53,15 @@ class IndexController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $news_count = News::find()->count();
+        $product_count = Products::find()->count();
+        $contact_count = Contact::find()->count();
+        $manager_user_count = Admin::find()->count();
+
+        return $this->render(
+            'index',
+            compact('news_count', 'product_count', 'contact_count', 'manager_user_count')
+        );
     }
 
     /**
