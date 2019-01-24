@@ -72,6 +72,12 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 4, Update you application index file to production environment.
 
 
+Online demo
+--------
+frontend  www.itweshare.com.
+backend   www.itweshare.com/admin.html   username: admin  password: admin    (Do not change the password)
+
+
 
 Features
 -------
