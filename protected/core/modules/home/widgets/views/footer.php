@@ -2,7 +2,7 @@
     <div class="footer-top" data-wow-duration="1000ms" data-wow-delay="300ms">
         <div class="container text-center">
             <div class="footer-logo">
-                <a href="index.html"><img class="img-responsive" src="<?= $logo_url ?>" alt=""></a>
+                <a href="/"><img class="img-responsive" src="<?= $logo_url ?>" alt=""></a>
             </div>
         </div>
     </div>
