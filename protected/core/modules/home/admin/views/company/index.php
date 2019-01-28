@@ -81,7 +81,7 @@ $this->params['breadcrumbs'][] = $this->title;
     #r-result{width:100%;}
 </style>
 
-<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=oFlwfUgtH5l4Cv0CDmI44sxk9fN3Df9w"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=oFlwfUgtH5l4Cv0CDmI44sxk9fN3Df9w&s=1"></script>
 
 <div id="searchResultPanel" style="border:1px solid #C0C0C0;width:150px;height:auto; display:none;"></div>
 
