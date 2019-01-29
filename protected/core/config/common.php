@@ -79,6 +79,7 @@ $config = [
         ],
         'allowedLanguages' => [],
         'notCheckPermissionAction' => [
+            'admin/index/captcha',
             'admin/rbac/*', //When application in product environment, this line should be deleted.
         ],
     ],
