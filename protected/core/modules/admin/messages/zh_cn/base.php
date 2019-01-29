@@ -23,4 +23,6 @@ return [
     'Author' => '作 者',
     'Author Web Site' => '作者网站',
     'Author Email' => '作者邮箱',
+    'Verification code error.' => '验证码错误',
+    'Captcha' => '验证码',
 ];

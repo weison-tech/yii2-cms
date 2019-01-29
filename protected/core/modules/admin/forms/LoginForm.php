@@ -31,6 +31,8 @@ class LoginForm extends Model
      */
     private $user = false;
 
+    public $captcha;
+
     /**
      * @inheritdoc
      */
@@ -43,6 +45,12 @@ class LoginForm extends Model
             ['rememberMe', 'boolean'],
             // password is validated by validatePassword()
             ['password', 'validatePassword'],
+            [
+                'captcha',
+                'captcha',
+                'captchaAction' => '/admin/index/captcha',
+                'message' => Yii::t('AdminModule.base', 'Verification code error.')
+            ],
         ];
     }
 
@@ -54,7 +62,8 @@ class LoginForm extends Model
         return [
             'username' => Yii::t('AdminModule.forms_LoginForm', 'Username'),
             'password' => Yii::t('AdminModule.forms_LoginForm', 'Password'),
-            'rememberMe' => Yii::t('AdminModule.forms_LoginForm', 'Remember Me')
+            'rememberMe' => Yii::t('AdminModule.forms_LoginForm', 'Remember Me'),
+            'captcha' => Yii::t('AdminModule.base', 'Captcha'),
         ];
     }
 

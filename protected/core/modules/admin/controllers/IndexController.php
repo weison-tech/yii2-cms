@@ -12,6 +12,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\captcha\CaptchaAction;
 
 class IndexController extends Controller
 {
@@ -46,6 +47,25 @@ class IndexController extends Controller
         ];
 
         return ArrayHelper::merge($behaviors, parent::behaviors());
+    }
+
+    public function actions()
+    {
+        $captcha = [
+            'class' => CaptchaAction::class,
+            'backColor' => 0x66b3ff,
+            'maxLength' => 4,
+            'minLength' => 4,
+            'padding' => 6,
+            'height' => 34,
+            'width' => 100,
+            'foreColor' => 0xffffff,
+            'offset' => 13,
+        ];
+        if (YII_ENV_TEST) $captcha = array_merge($captcha, ['fixedVerifyCode' => 'testme']);
+        return [
+            'captcha' => $captcha,
+        ];
     }
 
     /**
