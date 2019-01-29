@@ -18,7 +18,7 @@ $this->pageTitle = '案例详情';
                     <ol class="carousel-indicators">
                         <?php if ($model->album) { foreach ($model->album as $k => $v) { ?>
                             <li data-target="#post-carousel" data-slide-to="<?= $k ?>" class="<?= $k == 0 ? 'active' : '' ?>"></li>
-                        <?php } ?>
+                        <?php } } ?>
                     </ol>
                     <div class="carousel-inner">
                         <?php if ($model->album) { foreach ($model->album as $k => $v) { ?>
