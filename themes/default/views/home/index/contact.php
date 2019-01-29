@@ -67,7 +67,7 @@ $this->pageTitle = '联系';
         <div class="col-sm-8 col-xs-12 personal_need">
             <?= $form->field($model, 'demand')->textarea(['rows' => 6, 'placeholder' => "您的需求描述？"]) ?>
             <div class="refer">
-                <button>发送需求</button>
+                <button style="margin-left:15px;">发送需求</button>
                 <p>或者发送商务质询到邮箱：<?= $company ? $company->email : '' ?></p>
             </div>
         </div>
