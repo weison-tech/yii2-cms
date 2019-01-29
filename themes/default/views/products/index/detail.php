@@ -16,9 +16,9 @@ $this->pageTitle = '案例详情';
             <div class="post-thumb">
                 <div id="post-carousel"  class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
-                        <li data-target="#post-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#post-carousel" data-slide-to="1"></li>
-                        <li data-target="#post-carousel" data-slide-to="2"></li>
+                        <?php if ($model->album) { foreach ($model->album as $k => $v) { ?>
+                            <li data-target="#post-carousel" data-slide-to="<?= $k ?>" class="<?= $k == 0 ? 'active' : '' ?>"></li>
+                        <?php } ?>
                     </ol>
                     <div class="carousel-inner">
                         <?php if ($model->album) { foreach ($model->album as $k => $v) { ?>
