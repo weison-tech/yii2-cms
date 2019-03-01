@@ -52,12 +52,6 @@ $ composer create-project --prefer-dist weison-tech/yii2-cms cms
 
 6, 如果是运用到生产环境, 请修改跟目录下的Index.php文件为生产环境，关闭debug模式。
 
-在线示例
---------
-前端： www.itweshare.com
-
-后端： www.itweshare.com/admin.html  用户名：admin 密码：admin (为了方便其它人查看所有功能，请别修改密码)
-
 JS，css的丑化压缩（项目为生产环境进才会使用压缩后的css,js文件）
 -------
 1, 首先, 需要安装nodejs到电脑环境。
