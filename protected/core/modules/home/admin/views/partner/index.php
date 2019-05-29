@@ -14,10 +14,12 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="partner-index">
 
-    <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="navbar navbar-default">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
 
     <p>
-        <?= Html::a(Yii::t('HomeModule.base', 'Create Partner'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a(Yii::t('HomeModule.base', 'Create Partner'), ['create'], ['class' => 'btn btn-success btn-flat']) ?>
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -55,26 +57,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             [
-                'label' => Yii::t('base', 'Operation'),
-                'format' => 'raw',
-                'value' => function ($data) {
-                    $viewUrl = Url::to(['view', 'id' => $data->id]);
-                    $updateUrl = Url::to(['update', 'id' => $data->id]);
-                    $deleteUrl = Url::to(['delete', 'id' => $data->id]);
-                    return "<div class='btn-group'>" .
-                        Html::a(Yii::t('base', 'View'), $viewUrl,
-                            ['title' => Yii::t('base', 'View'), 'class' => 'btn btn-sm btn-info']) .
-                        Html::a(Yii::t('base', 'Update'), $updateUrl,
-                            ['title' => Yii::t('base', 'Update'), 'class' => 'btn btn-sm btn-primary']) .
-                        Html::a(Yii::t('base', 'Delete'), $deleteUrl, [
-                            'title' => Yii::t('base', 'Delete'),
-                            'class' => 'btn btn-sm btn-danger',
-                            'data-method' => 'post',
-                            'data-confirm' => Yii::t('base', 'Are you sure you want to delete this item?')
-                        ]) .
-                        "</div>";
-                },
-                'options' => ['style' => 'width:175px;'],
+                'class' => 'core\modules\admin\widgets\ActionColumn',
+                'options' => ['style' => 'width:240px;'],
             ],
         ],
     ]); ?>

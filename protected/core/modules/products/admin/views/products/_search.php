@@ -14,16 +14,16 @@ use core\models\Category;
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
-        'method' => 'post',
+        'method' => 'get',
         'options' => [
             'class' => 'form-inline',
-            'style' => 'margin:10px;',
+            'style' => 'margin: 0 10px;',
         ],
         'fieldConfig' => [
             'template' => "{label}: {input}",
             'inputOptions' => [
                 'class' => 'form-control',
-                'style' => 'margin-right:8px;',
+                'style' => 'margin:10px 0;',
             ],
         ]
     ]); ?>
@@ -58,7 +58,7 @@ use core\models\Category;
     ) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('base', 'Search'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('base', 'Search'), ['class' => 'btn btn-primary btn-flat']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

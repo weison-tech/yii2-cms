@@ -13,15 +13,15 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="banner-view">
 
     <p>
-        <?= Html::a(Yii::t('base', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('base', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary btn-flat']) ?>
         <?= Html::a(Yii::t('base', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger  btn-flat',
             'data' => [
                 'confirm' => Yii::t('base', 'Are you sure you want to delete this item?'),
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a(Yii::t('base', 'Back to list'), ['index'], ['class' => 'btn btn-info']) ?>
+        <?= Html::a(Yii::t('base', 'Back to list'), ['index'], ['class' => 'btn btn-info  btn-flat']) ?>
     </p>
 
     <?= DetailView::widget([
@@ -32,8 +32,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'title',
             [
                 'attribute'=>'thumb',
-                'value'=>$model->img ? $model->img->getPreviewImageUrl(1096, 648) : '-',
-                'format' => $model->img ? ['image',['width'=>'1096','height'=>'648']] : 'raw',
+                'value'=>$model->img ? $model->img->getPreviewImageUrl(218, 130) : '-',
+                'format' => $model->img ? ['image',['width'=>'218','height'=>'130']] : 'raw',
             ],
             'url:url',
             'sort_order',

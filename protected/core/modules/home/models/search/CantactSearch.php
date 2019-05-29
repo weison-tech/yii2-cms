@@ -66,11 +66,11 @@ class CantactSearch extends Contact
             'status' => $this->status,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'company', $this->company])
-            ->andFilterWhere(['like', 'mobile', $this->mobile])
-            ->andFilterWhere(['like', 'email', $this->email])
-            ->andFilterWhere(['like', 'demand', $this->demand]);
+        $query->andFilterWhere(['like', 'name', trim($this->name)])
+            ->andFilterWhere(['like', 'company', trim($this->company)])
+            ->andFilterWhere(['like', 'mobile', trim($this->mobile)])
+            ->andFilterWhere(['like', 'email', trim($this->email)])
+            ->andFilterWhere(['like', 'demand', trim($this->demand)]);
 
         return $dataProvider;
     }

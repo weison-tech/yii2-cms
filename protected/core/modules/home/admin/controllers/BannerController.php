@@ -50,7 +50,7 @@ class BannerController extends Controller
     public function actionIndex()
     {
         $searchModel = new BannerSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->bodyParams);
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,

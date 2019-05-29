@@ -15,7 +15,7 @@ $this->render('/layouts/_sidebar');
 ?>
 
 <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Refresh'), ['refresh'], [
-    'class' => 'btn btn-primary',
+    'class' => 'btn btn-primary btn-flat',
     'id' => 'btn-refresh',
 ]); ?>
 <?php echo $this->render('../_dualListBox', [

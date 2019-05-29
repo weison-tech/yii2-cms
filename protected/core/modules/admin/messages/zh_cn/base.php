@@ -17,8 +17,6 @@ return [
     'Soft Version' => '当前网站版本',
     'Support Language' => '系统支持语言',
     'News Count' => '新闻数量',
-    'Product Count' => '产品数量',
-    'Contact Count' => '留言数量',
     'Manager User Count' => '管理员数量',
     'Author' => '作 者',
     'Author Web Site' => '作者网站',

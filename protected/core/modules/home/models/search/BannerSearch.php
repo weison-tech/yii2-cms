@@ -71,9 +71,9 @@ class BannerSearch extends Banner
             'updated_by' => $this->updated_by,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'url', $this->url]);
+        $query->andFilterWhere(['like', 'name', trim($this->name)])
+            ->andFilterWhere(['like', 'title', trim($this->title)])
+            ->andFilterWhere(['like', 'url', trim($this->url)]);
 
         return $dataProvider;
     }

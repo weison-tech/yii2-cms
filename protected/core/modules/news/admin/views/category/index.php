@@ -16,9 +16,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a("<i class='fa fa-angle-double-down'></i> <span>" . Yii::t('NewsModule.base',
-                'Open All') . '</span>', 'javascript:void(0)', ['class' => 'btn btn-info', 'id' => 'toggle']) ?>
+                'Open All') . '</span>', 'javascript:void(0)', ['class' => 'btn btn-info btn-flat', 'id' => 'toggle']) ?>
         <?= Html::a(Yii::t('NewsModule.base', 'Create Category'), ['create'],
-            ['class' => 'btn btn-success']) ?>
+            ['class' => 'btn btn-success btn-flat']) ?>
     </p>
     <?= TreeGrid::widget([
         'dataProvider' => $dataProvider,
@@ -67,27 +67,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             [
-                'label' => Yii::t('base', 'Operation'),
-                'format' => 'raw',
-                'value' => function ($data) {
-                    $viewUrl = Url::to(['view', 'id' => $data->id]);
-                    $updateUrl = Url::to(['update', 'id' => $data->id]);
-                    $deleteUrl = Url::to(['delete', 'id' => $data->id]);
-                    return "<div class='btn-group'>" .
-                        Html::a(Yii::t('base', 'View'), $viewUrl,
-                            ['title' => Yii::t('base', 'View'), 'class' => 'btn btn-sm btn-info']) .
-                        Html::a(Yii::t('base', 'Update'), $updateUrl,
-                            ['title' => Yii::t('base', 'Update'), 'class' => 'btn btn-sm btn-primary']) .
-                        Html::a(Yii::t('base', 'Delete'), $deleteUrl, [
-                            'title' => Yii::t('base', 'Delete'),
-                            'class' => 'btn btn-sm btn-danger',
-                            'data-method' => 'post',
-                            'data-confirm' => Yii::t('base', 'Are you sure you want to delete this item?')
-                        ]) .
-                        "</div>";
-                },
-                'options' => ['style' => 'width:175px;'],
-            ]
+                'class' => 'core\modules\admin\widgets\ActionColumn',
+                'options' => ['style' => 'width:240px;'],
+            ],
         ],
     ]); ?>
 

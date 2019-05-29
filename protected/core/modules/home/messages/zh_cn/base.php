@@ -39,4 +39,5 @@ return [
     'Open All' => '展开所有',
     'Create Service' => '创建服务',
     'Close All' => '折叠所有',
+    'Update Service: ' => '修改服务：',
 ];

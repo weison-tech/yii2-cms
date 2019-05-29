@@ -21,13 +21,13 @@ $this->registerJs("var _opts = {$opts};", View::POS_BEGIN);
         <div class="move-buttons">
             <br><br>
             <?php echo Html::a('&gt;&gt;', $assignUrl, [
-                'class' => 'btn btn-success btn-assign',
+                'class' => 'btn btn-success btn-assign btn-flat',
                 'data-target' => 'available',
                 'title' => Yii::t('AdminModule.rbac_base', 'Assign'),
             ]); ?>
             <br/><br/>
             <?php echo Html::a('&lt;&lt;', $removeUrl, [
-                'class' => 'btn btn-danger btn-assign',
+                'class' => 'btn btn-danger btn-assign btn-flat',
                 'data-target' => 'assigned',
                 'title' => Yii::t('AdminModule.rbac_base', 'Remove'),
             ]); ?>

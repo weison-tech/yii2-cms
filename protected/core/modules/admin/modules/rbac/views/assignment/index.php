@@ -17,11 +17,15 @@ $this->render('/layouts/_sidebar');
 ?>
 <div class="assignment-index">
 
+    <div class="navbar navbar-default">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+
     <?php Pjax::begin(['timeout' => 5000]); ?>
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => ArrayHelper::merge($gridViewColumns, [
             [
                 'label' => Yii::t('base', 'Operation'),
@@ -29,7 +33,7 @@ $this->render('/layouts/_sidebar');
                 'value' => function ($data) {
                     $viewUrl = Url::to(['view', 'id' => $data->id]);
                     return Html::a(Yii::t('AdminModule.rbac_base', 'Assignment'), $viewUrl,
-                            ['title' => Yii::t('AdminModule.rbac_base', 'Assignment'), 'class' => 'btn btn-sm btn-info']);
+                            ['title' => Yii::t('AdminModule.rbac_base', 'Assignment'), 'class' => 'btn btn-sm btn-info btn-flat']);
                 },
                 'options' => ['style' => 'width:200px;'],
             ]

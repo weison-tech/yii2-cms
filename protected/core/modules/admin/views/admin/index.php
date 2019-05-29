@@ -11,33 +11,50 @@ use core\modules\admin\models\Admin;
 $this->title = Yii::t('AdminModule.widgets_AdminMenu', 'Admins');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="admin-index box box-primary">
-    <div class="box-header with-border">
-        <?= Html::a(Yii::t('AdminModule.base', 'Create Admin'), ['create'], ['class' => 'btn btn-success btn-flat']) ?>
-    </div>
-    <div class="box-body table-responsive no-padding">
-        <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-        <?= GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'layout' => "{items}\n{summary}\n{pager}",
-            'columns' => [
-                ['class' => 'yii\grid\SerialColumn'],
 
-                'id',
-                'username',
-                 'email:email',
-                [
-                    'attribute' => 'status',
-                    'value' => function ($model) {
-                        return Admin::$stat[$model->status];
-                    },
-                    'filter' => Admin::$stat,
-                ],
-                 'created_at:datetime',
-                 'updated_at:datetime',
-                ['class' => 'core\modules\admin\widgets\ActionColumn'],
-            ],
-        ]); ?>
+<div class="box-body table-responsive no-padding">
+
+    <div class="navbar navbar-default">
+        <?= $this->render('_search', ['model' => $searchModel]) ?>
     </div>
+
+    <p>
+        <?= Html::a(Yii::t('AdminModule.base', 'Create Admin'), ['create'], ['class' => 'btn btn-success btn-flat']) ?>
+    </p>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        //'filterModel' => $searchModel,
+        'layout' => "{items}\n{summary}\n{pager}",
+        'headerRowOptions' => ['class' => 'text-center'],
+        'columns' => [
+            //['class' => 'yii\grid\SerialColumn'],
+            'id',
+            'username',
+             'email:email',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return Admin::$stat[$model->status];
+                },
+                'filter' => Admin::$stat,
+            ],
+            [
+                'attribute' => 'created_at',
+                'content' => function ($model) {
+                    return date("Y-m-d H:i:s", $model->created_at);
+                },
+            ],
+            [
+                'attribute' => 'updated_at',
+                'content' => function ($model) {
+                    return date("Y-m-d H:i:s", $model->updated_at);
+                },
+            ],
+            [
+                'class' => 'core\modules\admin\widgets\ActionColumn',
+                'options' => ['style' => 'width:240px;'],
+            ],
+        ],
+    ]); ?>
 </div>

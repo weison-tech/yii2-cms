@@ -37,7 +37,7 @@ class ActionColumn extends  BaseColumn
                     'title' => $title,
                     'aria-label' => $title,
                     'data-pjax' => '0',
-                    'class' => "btn btn-sm btn-$btnClass"
+                    'class' => "btn btn-sm btn-$btnClass btn-flat"
                 ], $additionalOptions, $this->buttonOptions);
                 $icon = Html::tag('span', '', ['class' => "glyphicon glyphicon-$iconName"]);
                 return Html::a($icon . ' ' . $title , $url, $options);

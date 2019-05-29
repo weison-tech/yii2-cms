@@ -16,60 +16,64 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'latitude')->hiddenInput(['maxlength' => true])->label(false) ?>
+    <div class="box-body table-responsive">
 
-    <?= $form->field($model, 'longitude')->hiddenInput(['maxlength' => true])->label(false) ?>
+        <?= $form->field($model, 'latitude')->hiddenInput(['maxlength' => true])->label(false) ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'longitude')->hiddenInput(['maxlength' => true])->label(false) ?>
 
-    <?= $form->field($model, 'en_name')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'en_name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'mobile')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'logo')->widget('core\modules\file\widgets\Upload',
-        [
-            'url' => ['/file/file/upload'],
-            'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
-            'minFileSize' => 1,
-            'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-        ]
-    ); ?>
+        <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'thumb')->widget('core\modules\file\widgets\Upload',
-        [
-            'url' => ['/file/file/upload'],
-            'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
-            'minFileSize' => 1,
-            'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-        ]
-    ); ?>
+        <?= $form->field($model, 'logo')->widget('core\modules\file\widgets\Upload',
+            [
+                'url' => ['/file/file/upload'],
+                'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
+                'minFileSize' => 1,
+                'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            ]
+        ); ?>
 
-    <?= $form->field($model, 'm_thumb')->widget('core\modules\file\widgets\Upload',
-        [
-            'url' => ['/file/file/upload'],
-            'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
-            'minFileSize' => 1,
-            'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
-        ]
-    ); ?>
+        <?= $form->field($model, 'thumb')->widget('core\modules\file\widgets\Upload',
+            [
+                'url' => ['/file/file/upload'],
+                'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
+                'minFileSize' => 1,
+                'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            ]
+        ); ?>
 
-    <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
+        <?= $form->field($model, 'm_thumb')->widget('core\modules\file\widgets\Upload',
+            [
+                'url' => ['/file/file/upload'],
+                'maxFileSize' => 10 * 1024 * 1024, // 10 MiB,
+                'minFileSize' => 1,
+                'acceptFileTypes' => new JsExpression('/(\.|\/)(gif|jpe?g|png)$/i'),
+            ]
+        ); ?>
 
-    <?= $form->field($model, 'description')->widget('kucha\ueditor\UEditor',[]) ?>
+        <?= $form->field($model, 'address')->textInput(['maxlength' => true]) ?>
 
-    <div class="form-group field-subsection-url has-success">
-        <label class="control-label" for="subsection-url">搜索位置</label>
-        <div id="r-result">
-            <input type="text" id="suggestId" class="form-control"  maxlength="128" aria-invalid="false">
+        <?= $form->field($model, 'description')->widget('kucha\ueditor\UEditor',[]) ?>
+
+        <div class="form-group field-subsection-url has-success">
+            <label class="control-label" for="subsection-url">搜索位置</label>
+            <div id="r-result">
+                <input type="text" id="suggestId" class="form-control"  maxlength="128" aria-invalid="false">
+            </div>
+
+            <div id="l-map"></div>
         </div>
 
-        <div id="l-map"></div>
     </div>
 
-    <div class="form-group">
-        <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary']) ?>
+    <div class="box-footer">
+        <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary btn-flat']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

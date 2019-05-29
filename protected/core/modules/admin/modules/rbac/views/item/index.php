@@ -16,14 +16,19 @@ $this->params['breadcrumbs'][] = $this->title;
 $this->render('/layouts/_sidebar');
 ?>
 <div class="item-index">
+
+    <div class="navbar navbar-default">
+        <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    </div>
+
     <p>
-        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-success']); ?>
+        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Create ' . $labels['Item']), ['create'], ['class' => 'btn btn-success btn-flat']); ?>
     </p>
     <?php Pjax::begin(['timeout' => 5000, 'enablePushState' => false]); ?>
 
     <?php echo GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        //'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
@@ -33,8 +38,8 @@ $this->render('/layouts/_sidebar');
             [
                 'attribute' => 'ruleName',
                 'label' => Yii::t('AdminModule.rbac_base', 'Rule Name'),
-                'filter' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
-                'filterInputOptions' => ['class' => 'form-control', 'prompt' => Yii::t('AdminModule.rbac_base', 'Select Rule')],
+                //'filter' => ArrayHelper::map(Yii::$app->getAuthManager()->getRules(), 'name', 'name'),
+                //'filterInputOptions' => ['class' => 'form-control', 'prompt' => Yii::t('AdminModule.rbac_base', 'Select Rule')],
             ],
             [
                 'attribute' => 'description',
@@ -43,27 +48,9 @@ $this->render('/layouts/_sidebar');
             ],
 
             [
-                'label' => Yii::t('base', 'Operation'),
-                'format' => 'raw',
-                'value' => function ($data) {
-                    $viewUrl = Url::to(['view', 'id' => $data->name]);
-                    $updateUrl = Url::to(['update', 'id' => $data->name]);
-                    $deleteUrl = Url::to(['delete', 'id' => $data->name]);
-                    return "<div class='btn-group'>" .
-                        Html::a(Yii::t('AdminModule.rbac_base', 'View'), $viewUrl,
-                            ['title' => Yii::t('AdminModule.rbac_base', 'View'), 'class' => 'btn btn-sm btn-info']) .
-                        Html::a(Yii::t('AdminModule.rbac_base', 'Update'), $updateUrl,
-                            ['title' => Yii::t('AdminModule.rbac_base', 'Update'), 'class' => 'btn btn-sm btn-primary']) .
-                        Html::a(Yii::t('AdminModule.rbac_base', 'Delete'), $deleteUrl, [
-                            'title' => Yii::t('AdminModule.rbac_base', 'Delete'),
-                            'class' => 'btn btn-sm btn-danger',
-                            'data-method' => 'post',
-                            'data-confirm' => Yii::t('base', 'Are you sure you want to delete this item?')
-                        ]) .
-                        "</div>";
-                },
-                'options' => ['style' => 'width:200px;'],
-            ]
+                'class' => 'core\modules\admin\widgets\ActionColumn',
+                'options' => ['style' => 'width:240px;'],
+            ],
         ],
     ]); ?>
 

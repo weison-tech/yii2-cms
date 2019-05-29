@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $form->field($model, 'max_file_size')->textInput(['maxlength' => true]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('base', 'Update'), ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton(Yii::t('base', 'Update'), ['class' => 'btn btn-primary btn-flat']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

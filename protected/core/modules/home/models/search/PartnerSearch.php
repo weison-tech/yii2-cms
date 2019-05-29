@@ -71,8 +71,8 @@ class PartnerSearch extends Partner
             'updated_by' => $this->updated_by,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'url', $this->url]);
+        $query->andFilterWhere(['like', 'name', trim($this->name)])
+            ->andFilterWhere(['like', 'url', trim($this->url)]);
 
         return $dataProvider;
     }

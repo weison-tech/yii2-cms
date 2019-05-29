@@ -13,8 +13,8 @@ use yii\helpers\Url;
         <!-- small box -->
         <div class="small-box bg-green text-center">
             <div class="inner">
-                <h3><?=$news_count?></h3>
-                <p><?= Yii::t('AdminModule.base', 'News Count') ?></p>
+                <h3>200</h3>
+                <p>NNNNNNNNN</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -29,8 +29,8 @@ use yii\helpers\Url;
         <!-- small box -->
         <div class="small-box bg-aqua text-center">
             <div class="inner">
-                <h3><?=$product_count?></h3>
-                <p><?= Yii::t('AdminModule.base', 'Product Count') ?></p>
+                <h3>500</h3>
+                <p>CCCCCCCCCCCCC</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -45,8 +45,8 @@ use yii\helpers\Url;
         <!-- small box -->
         <div class="small-box bg-blue text-center">
             <div class="inner">
-                <h3><?=$contact_count?></h3>
-                <p><?= Yii::t('AdminModule.base', 'Contact Count') ?></p>
+                <h3>1000</h3>
+                <p>XXXXXXXXX</p>
             </div>
             <div class="icon">
                 <i class="ion ion-bag"></i>

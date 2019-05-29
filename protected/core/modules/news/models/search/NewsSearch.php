@@ -72,8 +72,8 @@ class NewsSearch extends News
             'updated_by' => $this->updated_by,
         ]);
 
-        $query->andFilterWhere(['like', 'title', $this->title])
-            ->andFilterWhere(['like', 'content', $this->content]);
+        $query->andFilterWhere(['like', 'title', trim($this->title)])
+            ->andFilterWhere(['like', 'content', trim($this->content)]);
 
         return $dataProvider;
     }

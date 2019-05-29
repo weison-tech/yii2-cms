@@ -18,13 +18,13 @@ $this->render('/layouts/_sidebar');
 ?>
 <div class="auth-item-view">
     <p>
-        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Update'), ['update', 'id' => $model->name], ['class' => 'btn btn-primary']); ?>
+        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Update'), ['update', 'id' => $model->name], ['class' => 'btn btn-primary btn-flat']); ?>
         <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Delete'), ['delete', 'id' => $model->name], [
-            'class' => 'btn btn-danger',
+            'class' => 'btn btn-danger btn-flat',
             'data-confirm' => Yii::t('AdminModule.rbac_base', 'Are you sure to delete this item?'),
             'data-method' => 'post',
         ]); ?>
-        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Create'), ['create'], ['class' => 'btn btn-success']); ?>
+        <?php echo Html::a(Yii::t('AdminModule.rbac_base', 'Create'), ['create'], ['class' => 'btn btn-success btn-flat']); ?>
     </p>
     <div class="row">
         <div class="col-sm-12">

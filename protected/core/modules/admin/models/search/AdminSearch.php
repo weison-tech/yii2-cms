@@ -67,10 +67,8 @@ class AdminSearch extends Admin
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'username', $this->username])
-            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
-            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
-            ->andFilterWhere(['like', 'email', $this->email]);
+        $query->andFilterWhere(['like', 'username', trim($this->username)])
+            ->andFilterWhere(['like', 'email', trim($this->email)]);
 
         return $dataProvider;
     }
