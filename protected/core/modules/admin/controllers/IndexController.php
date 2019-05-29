@@ -73,11 +73,14 @@ class IndexController extends Controller
      */
     public function actionIndex()
     {
+        $news_count = News::find()->where(['status' => News::STATUS_ENABLED])->count();
+        $product_count = Products::find()->where(['status' => Products::STATUS_ENABLED])->count();
+        $contact_count = Contact::find()->where(['<>', 'status', Contact::STATUS_DELETED])->count();
         $manager_user_count = Admin::find()->where(['status' => Admin::STATUS_ACTIVE])->count();
 
         return $this->render(
             'index',
-            compact( 'manager_user_count')
+            compact('news_count', 'product_count', 'contact_count', 'manager_user_count')
         );
     }
 
