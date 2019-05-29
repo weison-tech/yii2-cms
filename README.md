@@ -71,6 +71,8 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 ```
 4, Update you application index file to production environment.
 
+5, Enter the management background configuration permissions
+
 
 Features
 -------

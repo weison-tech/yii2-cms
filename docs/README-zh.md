@@ -68,6 +68,7 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 ```
 4, 为了生效，别忘记了修改项目为生产环境。
 
+5, 进入管理后台配置权限
 
 
 功能
