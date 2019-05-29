@@ -142,7 +142,7 @@ use yii\helpers\Url;
             <tr>
                 <td><?= Yii::t('AdminModule.base', 'Author Web Site') ?></td>
                 <td>
-                    <a target="_blank" href="http://www.itweshare.com">www.itweshare.com</a>
+                    <a target="_blank" href="https://www.mym.pub">www.mym.pub</a>
                 </td>
             </tr>
 

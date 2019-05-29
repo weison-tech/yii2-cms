@@ -11,7 +11,7 @@ Yii::setAlias('@core', '@app/core');
 
 $config = [
     'name' => 'basic',
-    'version' => '1.0.0',
+    'version' => '1.0.2',
     'basePath' => '@app', //Application base path.
     'viewPath' => '@core/views',
     'bootstrap' => ['log', 'core\components\bootstrap\ModuleAutoLoader'],
