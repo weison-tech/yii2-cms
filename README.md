@@ -55,6 +55,8 @@ $ composer create-project --prefer-dist weison-tech/yii2-cms cms
 6, If you use application in product environment, please change the index.php who stored in root folder.
 when in product environment,you can compress all js and css file to one file.
 
+7, Enter the management background configuration permissions
+
 Js and css compress
 -------
 1, First of all, you should install node js in your computer environment.
@@ -71,7 +73,6 @@ $ php yii asset core/config/asset.php core/config/assets-prod.php
 ```
 4, Update you application index file to production environment.
 
-5, Enter the management background configuration permissions
 
 
 Features

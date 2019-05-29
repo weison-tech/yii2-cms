@@ -52,6 +52,8 @@ $ composer create-project --prefer-dist weison-tech/yii2-cms cms
 
 6, 如果是运用到生产环境, 请修改跟目录下的Index.php文件为生产环境，关闭debug模式。
 
+7, 进入管理后台配置权限
+
 JS，css的丑化压缩（项目为生产环境进才会使用压缩后的css,js文件）
 -------
 1, 首先, 需要安装nodejs到电脑环境。
@@ -67,8 +69,6 @@ $ cd protected
 $ php yii asset core/config/asset.php core/config/assets-prod.php
 ```
 4, 为了生效，别忘记了修改项目为生产环境。
-
-5, 进入管理后台配置权限
 
 
 功能
