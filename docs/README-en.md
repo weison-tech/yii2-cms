@@ -53,7 +53,9 @@ $ composer create-project --prefer-dist weison-tech/yii2-cms cms
 6, If you use application in product environment, please change the index.php who stored in root folder.
 when in product environment,you can compress all js and css file to one file.
 
-7, Enter the management background configuration permissions
+7, Enter the management background configuration permissions.
+
+8，After the permissions are configured, please modify the protected/core/config/common.php file and comment 'admin/rbac/*' under the 'notCheckPermissionAction' configuration item.
 
 Js and css compress
 -------

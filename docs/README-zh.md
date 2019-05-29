@@ -52,7 +52,9 @@ $ composer create-project --prefer-dist weison-tech/yii2-cms cms
 
 6, 如果是运用到生产环境, 请修改跟目录下的Index.php文件为生产环境，关闭debug模式。
 
-7, 进入管理后台配置权限
+7, 进入管理后台配置权限。
+
+8，权限配置好后，请修改protected/core/config/common.php 文件，注释 'notCheckPermissionAction'  配置项下的  'admin/rbac/*'。
 
 JS，css的丑化压缩（项目为生产环境进才会使用压缩后的css,js文件）
 -------
