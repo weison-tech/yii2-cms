@@ -57,6 +57,10 @@ class CantactSearch extends Contact
             return $dataProvider;
         }
 
+        if(isset($params['export']) && $params['export'] == 1) {
+            $dataProvider->setPagination(false);
+        }
+
         //Exclude the soft deleted recorders.
         $query->andFilterWhere(['<>', 'status', self::STATUS_DELETED]);
 

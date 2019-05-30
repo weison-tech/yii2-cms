@@ -40,4 +40,11 @@ return [
     'Create Service' => '创建服务',
     'Close All' => '折叠所有',
     'Update Service: ' => '修改服务：',
+    'Are you sure to mark these items as read?' => '确定标记所选项为已读？',
+    'Are you sure to delete these items?' => '确定删除所选项',
+    'Batch Read' => '标记为已读',
+    'Batch Delete' => '批量删除',
+    'Delete successfully' => '删除成功',
+    'Read successfully' => '阅读成功',
+    'Message List' => '消息列表',
 ];

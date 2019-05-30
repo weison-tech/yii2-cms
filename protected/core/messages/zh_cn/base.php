@@ -44,4 +44,8 @@ return [
     'Disabled' => '隐 藏',
     'Back To List' => '返回列表',
     'Update successfully' => '修改成功',
+    'Ok' => '确定',
+    'Cancel' => '取消',
+    'Please check some item' => '请选择一些项',
+    'Export' => '导出',
 ];

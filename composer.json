@@ -27,7 +27,8 @@
         "bower-asset/jquery-placeholder": "^2.3.0",
         "kop/yii2-scroll-pager": "dev-master",
         "2amigos/yii2-date-time-picker-widget" : "~1.0",
-        "2amigos/yii2-arrayquery-component": "*"
+        "2amigos/yii2-arrayquery-component": "*",
+        "moonlandsoft/yii2-phpexcel": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

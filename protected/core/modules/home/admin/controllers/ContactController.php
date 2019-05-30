@@ -2,6 +2,7 @@
 
 namespace core\modules\home\admin\controllers;
 
+use moonland\phpexcel\Excel;
 use Yii;
 use core\modules\home\models\Contact;
 use core\modules\home\models\search\CantactSearch;
@@ -38,7 +39,13 @@ class ContactController extends Controller
     public function actionIndex()
     {
         $searchModel = new CantactSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $params = Yii::$app->request->queryParams;
+        $dataProvider = $searchModel->search($params);
+
+        if (isset($params['export']) && $params['export'] == 1) {
+            $this->export($dataProvider->getModels());
+            exit;
+        }
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -119,6 +126,48 @@ class ContactController extends Controller
     }
 
     /**
+     * Batch delete the contact message.
+     * @return \yii\web\Response
+     */
+    public function actionBatchDelete()
+    {
+        $ids = Yii::$app->request->post('ids');
+        if (is_array($ids)) {
+            Contact::updateAll(['status' => Contact::STATUS_DELETED], [
+                'and',
+                ['<>', 'status', Contact::STATUS_DELETED],
+                ['in', 'id', $ids]
+            ]);
+            Yii::$app->getSession()->setFlash(
+                'success',
+                Yii::t('HomeModule.base', 'Delete successfully')
+            );
+        }
+        return $this->redirect(['index']);
+    }
+
+    /**
+     * Batch read the contact message.
+     * @return \yii\web\Response
+     */
+    public function actionBatchRead()
+    {
+        $ids = Yii::$app->request->post('ids');
+        if (is_array($ids)) {
+            Contact::updateAll(['status' => Contact::STATUS_READ], [
+                'and',
+                ['status' => Contact::STATUS_UNREAD],
+                ['in', 'id', $ids]
+            ]);
+            Yii::$app->getSession()->setFlash(
+                'success',
+                Yii::t('HomeModule.base', 'Read successfully')
+            );
+        }
+        return $this->redirect(['index']);
+    }
+
+    /**
      * Finds the Contact model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param string $id
@@ -132,5 +181,31 @@ class ContactController extends Controller
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+    }
+
+    /**
+     * Export contact message
+     */
+    public function export($models)
+    {
+        Excel::export([
+            'models' => $models,
+            'fileName' => Yii::t('HomeModule.base', 'Message List'),
+            'columns' => [
+                'name',
+                'company',
+                'mobile',
+                'email:email',
+                'demand:ntext',
+                'created_at:datetime',
+                [
+                    'attribute'=>'status',
+                    'value'=> function ($model) {
+                        return Contact::getStatus($model->status);
+                    },
+                    'format' => 'raw',
+                ],
+            ],
+        ]);
     }
 }
