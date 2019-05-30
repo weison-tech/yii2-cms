@@ -36,6 +36,10 @@ uploads/                 contains all upload files.
 
 [中文文档](https://github.com/weison-tech/yii2-cms/blob/master/docs/README-zh.md)
 
+[The online backend demo](http://cms.mym.pub/admin.html) username:admin  password:123456 (Please don't update the admin user)
+
+[The online frontend demo](http://cms.mym.pub)
+
 Installation
 --------
 1, Update composer asset plugin.

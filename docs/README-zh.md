@@ -34,6 +34,10 @@ tools/
 uploads/                 包含所有用户上传的文件
 ```
 
+[在线 demo 后端](http://cms.mym.pub/admin.html) 用户名:admin  密码:123456 (请别修改用户密码)
+
+[在线 demo 前端](http://cms.mym.pub) 
+
 安装
 --------
 1, 更新composer缓存

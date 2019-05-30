@@ -34,6 +34,10 @@ tools/
 uploads/                 contains all upload files.
 ```
 
+[The online backend demo](http://cms.mym.pub/admin.html) username:admin  password:123456 (Please don't update the admin user)
+
+[The online frontend demo](http://cms.mym.pub)
+
 Installation
 --------
 1, Update composer asset plugin.
