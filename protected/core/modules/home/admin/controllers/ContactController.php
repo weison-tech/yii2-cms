@@ -188,6 +188,7 @@ class ContactController extends Controller
      */
     public function export($models)
     {
+        header('Content-Type: application/vnd.ms-excel');
         Excel::export([
             'models' => $models,
             'fileName' => Yii::t('HomeModule.base', 'Message List'),
