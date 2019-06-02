@@ -189,19 +189,19 @@ class ContactController extends Controller
     public function export($models)
     {
         header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment; filename=' . Yii::t('HomeModule.base', 'Message List') . '.xlsx');
         Excel::export([
             'models' => $models,
-            'fileName' => Yii::t('HomeModule.base', 'Message List'),
             'columns' => [
                 'name',
                 'company',
                 'mobile',
-                'email:email',
+                'email',
                 'demand:ntext',
                 'created_at:datetime',
                 [
-                    'attribute'=>'status',
-                    'value'=> function ($model) {
+                    'attribute' => 'status',
+                    'value' => function ($model) {
                         return Contact::getStatus($model->status);
                     },
                     'format' => 'raw',
