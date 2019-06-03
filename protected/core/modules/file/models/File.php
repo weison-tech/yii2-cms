@@ -340,7 +340,7 @@ class File extends ActiveRecord
         ImageConverter::Resize(
             $originalFilename,
             $previewFilename,
-            array('mode' => 'max', 'width' => $maxWidth, 'height' => $maxHeight)
+            array('mode' => 'max', 'width' => $maxWidth, 'height' => $maxHeight, 'transparent' => true)
         );
 
         return $this->getUrl($suffix);
