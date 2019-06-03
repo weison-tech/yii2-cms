@@ -146,6 +146,7 @@ jQuery(document).ready(function() {
         
         var formData = new FormData($('#uploadForm')[0]);
     
+        var loadingIndex;
         $.ajax({
             url: "{$excelPassUrl}",
             type: 'POST',
@@ -156,9 +157,13 @@ jQuery(document).ready(function() {
             dataType:"json",
             beforeSend: function(){
                 uploading = true;
+                loadingIndex = layer.load(1, {
+                  shade: [0.5,'#000']
+                });
             },
             success : function(data) {
                 uploading = false;
+                layer.close(loadingIndex);
                 layer.msg(data.msg);
                 setTimeout(function() {
                     location.reload();
