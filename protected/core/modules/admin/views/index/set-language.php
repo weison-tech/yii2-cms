@@ -1,1 +1,0 @@
-<?php echo core\widgets\LanguageChooser::widget(); ?>

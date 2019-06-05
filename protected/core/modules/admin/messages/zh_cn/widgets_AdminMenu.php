@@ -24,6 +24,5 @@ return array(
     'Assignment' => '分配权限',
     'Roles' => '角色',
     'Permissions' => '权限',
-    'Language Setting' => '语言设置',
     'Admins' => '管理员管理',
 );

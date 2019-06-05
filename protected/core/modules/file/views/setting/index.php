@@ -11,7 +11,7 @@ $this->params['breadcrumbs'][] = $this->title;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="goods-type-form">
+<div class="file-setting-form">
 
     <?php $form = ActiveForm::begin(); ?>
 

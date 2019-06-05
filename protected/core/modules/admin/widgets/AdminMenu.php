@@ -33,7 +33,7 @@ class AdminMenu extends \core\widgets\BaseMenu
                     ],
 
                     ['label' => Yii::t('AdminModule.widgets_AdminMenu', 'File Setting'), 'icon' => 'file-code-o', 'url' => ['/file/setting'],],
-                    ['label' => Yii::t('AdminModule.widgets_AdminMenu', 'Language Setting'), 'icon' => 'language', 'url' => ['/admin/index/set-language'],],
+                    ['label' => Yii::t('AdminModule.base', 'Basic Setting'), 'icon' => 'gears', 'url' => ['/admin/index/setting'],],
                 ],
             ]
         );

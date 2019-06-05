@@ -32,4 +32,8 @@ return [
     'Operation failed' => '操作失败',
     'Excel must contain username field' => 'Excel 必须包含用户名字段',
     'Processing, please wait...' => '处理中，请稍后...',
+    'Basic Setting' => '基础设置',
+    'Application Name' => '应用名',
+    'Theme' => '主题',
+    'Time Zone' => '时区',
 ];

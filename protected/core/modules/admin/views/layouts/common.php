@@ -2,6 +2,8 @@
 /**
  * @var $this yii\web\View
  */
+
+use core\widgets\LanguageChooser;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use core\modules\admin\widgets\CompanyLogo;
@@ -31,6 +33,8 @@ use core\modules\admin\widgets\CompanyLogo;
                                 ['target' => '_blank',]
                             ) ?>
                         </li>
+
+                        <?= \core\modules\admin\widgets\LanguageChooser::widget() ?>
 
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">

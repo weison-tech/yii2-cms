@@ -1,10 +1,12 @@
 <?php
 namespace core\modules\admin\controllers;
 
+use core\modules\admin\forms\SettingForm;
 use core\modules\admin\models\Admin;
 use core\modules\home\models\Contact;
 use core\modules\news\models\News;
 use core\modules\products\models\Products;
+use humhub\modules\custom_pages\models\forms\SettingsForm;
 use Yii;
 use core\modules\admin\components\Controller;
 use core\modules\admin\forms\LoginForm;
@@ -130,8 +132,19 @@ class IndexController extends Controller
     /**
      * Set language
      */
-    public function actionSetLanguage()
+    public function actionSetting()
     {
-        return $this->render('set-language');
+        $form = new SettingForm;
+        if ($form->load(Yii::$app->request->post()) && $form->validate() && $form->save()) {
+            Yii::$app->getSession()->setFlash(
+                'success',
+                Yii::t('FileModule.controllers_FileController', 'Setting successfully.')
+            );
+            return $this->redirect(['setting']);
+        }
+
+        return $this->render('setting', [
+            'model' => $form
+        ]);
     }
 }
