@@ -31,7 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
             'company',
             'mobile',
             'email:email',
-            'demand:ntext',
+            [
+                'attribute'=>'demand',
+                'value'=> Html::encode($model->demand),
+                'format' => 'html',
+            ],
             'created_at:datetime',
             [
                 'attribute'=>'status',
