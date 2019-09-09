@@ -77,6 +77,7 @@ if (YII_ENV_DEV) {
                 'class' => 'core\modules\admin\gii\crud\Generator',
                 'templates' => [
                     'agent' => '@core/modules/admin/gii/crud/simple',
+                    'default' => '@vendor/yiisoft/yii2-gii/src/generators/crud/default'
                 ]
             ],
         ],
